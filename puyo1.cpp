@@ -31,8 +31,13 @@ void ChangeSize(unsigned int line, unsigned int column)
 {
 	Release();
 
-	//新しいサイズでメモリ確保
-	data = new puyocolor[line*column];
+       //新しいサイズでメモリ確保
+       data = new puyocolor[line*column];
+
+       //盤面を空で初期化
+       for (unsigned int i = 0; i < line * column; ++i) {
+               data[i] = NONE;
+       }
 
 	data_line = line;
 	data_column = column;
